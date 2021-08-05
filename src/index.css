@@ -45,3 +45,9 @@ img {
     max-width: 100%;
     height: auto;
 }
+.navlink {
+    color: teal;
+}
+.activelink {
+    color: fuchsia;
+}
