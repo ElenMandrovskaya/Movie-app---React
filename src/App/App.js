@@ -1,6 +1,6 @@
-// import { useState, useEffect } from 'react';
 import { Route, Switch } from "react-router-dom";
 import { AppBar } from "../components/AppBar/AppBar";
+import { MovieList } from "../components/MovieList/MovieList";
 
 export default function App() {
     return (
@@ -10,6 +10,7 @@ export default function App() {
                 <Route path="/" exact>
                 </Route>
                 <Route path="/movies">
+                    <MovieList />
                 </Route>
             </Switch>
         </>
