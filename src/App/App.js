@@ -1,16 +1,23 @@
 import { Route, Switch } from "react-router-dom";
 import { AppBar } from "../components/AppBar/AppBar";
-import { MovieList } from "../components/MovieList/MovieList";
+import { HomePage } from "../pages/HomePage/HomePage";
+// import { MoviesPage } from "../pages/MoviesPage/MoviesPage";
+// import { MovieDetailsPage } from "../pages/MovieDetailsPage/MovieDetailsPage";
+
 
 export default function App() {
     return (
         <>
             <AppBar />
             <Switch>
-                <Route path="/" exact>
+                <Route exact path="/">
+                    <HomePage/>
                 </Route>
-                <Route path="/movies">
-                    <MovieList />
+                <Route exact path="/movies">
+                    {/* <MoviesPage/> */}
+                </Route>
+                <Route path="/movies/:movieId">
+                    {/* <MovieDetailsPage /> */}
                 </Route>
             </Switch>
         </>
