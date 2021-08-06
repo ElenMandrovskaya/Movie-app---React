@@ -12,8 +12,7 @@ export function SearchForm({ onSearch }) {
   };
 
     return (
-          <Form
-              onSubmit={handleSearch}>
+          <Form onSubmit={handleSearch}>
                 <SubmitBtn type="submit">
                     <BtnLabel>Search</BtnLabel>
                 </SubmitBtn>
