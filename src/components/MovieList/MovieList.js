@@ -27,7 +27,7 @@ export function MovieList({ movies }) {
                     title={title}
                     rating={vote_average}
                     genres={genres.filter((genre) => genre_ids.includes(genre.id))
-                        .slice(0, 3).map((genre) => genre.name)} />
+                        .slice(0, 3).map((genre) => genre.name).join(', ')} />
             ))}
         </List>
   )
