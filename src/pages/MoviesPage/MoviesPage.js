@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation, useHistory, useRouteMatch } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 
 import { SearchForm } from "../../components/SearchForm/SearchForm";
 import { MovieList } from "../../components/MovieList/MovieList";
@@ -24,6 +24,9 @@ export function MoviesPage() {
         try {
             const data = await getSearchMovies(searchQuery, currentPage);
             const { results } = data;
+            if (!results.length) {
+          throw new Error("No results found");
+        }
             setMovies(results);
             setStatus("resolved");
         }
@@ -33,7 +36,7 @@ export function MoviesPage() {
       }
     }
     getMovies();
-    }, [searchQuery, currentPage, history])
+    }, [searchQuery, currentPage])
 
     const handleQueryChange = query => {
         if (!query || query === searchQuery) {
