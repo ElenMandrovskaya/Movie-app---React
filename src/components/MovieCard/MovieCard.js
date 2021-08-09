@@ -1,7 +1,7 @@
 // import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Card, Poster, MovieTitle, MovieInfo, MovieRate, MovieGenre } from "./MovieCard.styled";
-import { Spinner } from "../Spinner/Spinner";
+// import { Spinner } from "../Spinner/Spinner";
 
 export function MovieCard({ id, posterPath, title, genres, rating }) {
     const location = useLocation();

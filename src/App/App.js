@@ -2,7 +2,7 @@ import { Route, Switch } from "react-router-dom";
 import { AppBar } from "../components/AppBar/AppBar";
 import { HomePage } from "../pages/HomePage/HomePage";
 import { MoviesPage } from "../pages/MoviesPage/MoviesPage";
-// import { MovieDetailsPage } from "../pages/MovieDetailsPage/MovieDetailsPage";
+import { MovieDetailsPage } from "../pages/MovieDetailsPage/MovieDetailsPage";
 
 
 export default function App() {
@@ -17,7 +17,7 @@ export default function App() {
                     <MoviesPage/>
                 </Route>
                 <Route path="/movies/:movieId">
-                    {/* <MovieDetailsPage /> */}
+                    <MovieDetailsPage />
                 </Route>
             </Switch>
         </>
