@@ -12,14 +12,15 @@ export function MovieCard({ id, posterPath, title, genres, rating }) {
                     pathname: `/movies/${id}`,
                     state: { from: location },
                 }}>
-            </Link>
+            
             <Poster src={`https://image.tmdb.org/t/p/original${posterPath}`} />
             {/* <Spinner /> */}
             <MovieTitle>{title}</MovieTitle>
             <MovieInfo>
-                <MovieRate>{rating}</MovieRate>
-                <MovieGenre>{genres}</MovieGenre>
+            <MovieRate>{rating}</MovieRate>
+            <MovieGenre>{genres}</MovieGenre>
             </MovieInfo>
+            </Link>
         </Card>
 
     )

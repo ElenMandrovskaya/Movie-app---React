@@ -19,8 +19,8 @@ export const List = styled.ul`
   }
 
   @media screen and (min-width: 1024px) {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
     justify-content: center;
     justify-items: center;
   }

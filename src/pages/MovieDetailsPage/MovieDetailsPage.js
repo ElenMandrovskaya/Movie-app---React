@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { MoviesDetail } from "../../components/MoviesDetail/MoviesDetail";
-import { getMovieInfo } from "../../services/apiService";
+import { getMovieInfoById } from "../../services/apiService";
 
 export function MovieDetailsPage() {
     const { movieId } = useParams();
     const [movie, setMovie] = useState(null);
     const history = useHistory();
-
+// console.log(movieId)
     useEffect(() => {
         async function getMovie() {
             try {
-                const movie = await getMovieInfo(movieId);
+                const movie = await getMovieInfoById(movieId);
                 if (!movie) {
                     throw new Error("Page not found");
                 }
@@ -30,10 +30,11 @@ export function MovieDetailsPage() {
                 posterPath={movie.poster_path}
                 overview={movie.overview}
                 releaseDate={movie.release_date}
-                popularity={movie.popularity}
                 voteRate={movie.vote_average}
+                voteCount={movie.vote_count}
                 genres={movie.genres.map((genre) => genre.name).join(", ")}
             />}
             </>
     )
 }
+getMovieInfoById(57353)

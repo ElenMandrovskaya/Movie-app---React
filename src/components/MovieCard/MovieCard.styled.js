@@ -17,7 +17,7 @@ export const Card = styled.li`
 
 export const Poster = styled.img`
     margin-bottom: 10px;
-    height: 398px;
+    height: 350px;
     cursor: pointer;
     border-radius: 5px;
 `;

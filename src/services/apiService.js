@@ -15,7 +15,7 @@ export async function getSearchMovies(seacrhQuery, page) {
     return data; 
 }
 
-export async function getMovieInfo(movieId) {
+export async function getMovieInfoById(movieId) {
     const url = `/movie/${movieId}?api_key=${API_KEY}&language=en-US`;
     const { data } = await axios.get(url);
     return data; 
