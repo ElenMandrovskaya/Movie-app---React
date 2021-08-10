@@ -1,9 +1,9 @@
 // import PropTypes from "prop-types";
-// import { useRouteMatch } from "react-router-dom";
+import { NavLink, useRouteMatch } from "react-router-dom";
 import { MovieContainer, DetailsContainer, Poster, MovieTitle, ItemTitle, ItemDesc } from "./MoviesDetail.styled";
 
 export function MoviesDetail({ posterPath, title, genres, voteRate, voteCount, releaseDate, overview }) {
-    // const { url } = useRouteMatch();
+    const { url } = useRouteMatch();
 
     return (
         <MovieContainer>
@@ -16,6 +16,7 @@ export function MoviesDetail({ posterPath, title, genres, voteRate, voteCount, r
                 <ItemTitle>Genres</ItemTitle>
                 <ItemDesc>{genres}</ItemDesc>
             </DetailsContainer>
+            <NavLink to={`${url}/cast`}>Cast</NavLink>
         </MovieContainer>
     )
 }

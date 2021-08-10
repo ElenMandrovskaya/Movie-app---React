@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Route, useRouteMatch, useParams, useHistory } from "react-router-dom";
 import { MoviesDetail } from "../../components/MoviesDetail/MoviesDetail";
 import { getMovieInfoById } from "../../services/apiService";
+import {MovieCast} from "../MovieCast/MovieCast"
 
 export function MovieDetailsPage() {
     const { movieId } = useParams();
     const [movie, setMovie] = useState(null);
     const history = useHistory();
+    const { path } = useRouteMatch();
 // console.log(movieId)
     useEffect(() => {
         async function getMovie() {
@@ -34,6 +36,9 @@ export function MovieDetailsPage() {
                 voteCount={movie.vote_count}
                 genres={movie.genres.map((genre) => genre.name).join(", ")}
             />}
+            <Route path={`${path}/cast`}>
+                    <MovieCast />
+            </Route>
             </>
     )
 }
