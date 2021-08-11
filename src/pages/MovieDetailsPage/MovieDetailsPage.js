@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense, lazy } from "react";
 import { Route, useRouteMatch, useParams, useHistory, useLocation } from "react-router-dom";
 import { MoviesDetail } from "../../components/MoviesDetail/MoviesDetail";
 import { getMovieInfoById } from "../../services/apiService";
-import { MovieCast } from "../MovieCast/MovieCast";
-import { MovieReviews } from "../MovieReviews/MovieReviews";
+// import { MovieCast } from "../MovieCast/MovieCast";
+// import { MovieReviews } from "../MovieReviews/MovieReviews";
 import { BackBtn } from "../../components/MoviesDetail/MoviesDetail.styled";
+import { Spinner } from "../../components/Spinner/Spinner";
+
+const MovieCast = lazy(() => import('../MovieCast/MovieCast'));
+const MovieReviews = lazy(() => import('../MovieReviews/MovieReviews'));
 
 export function MovieDetailsPage() {
     const { movieId } = useParams();
@@ -35,7 +39,7 @@ export function MovieDetailsPage() {
       return;
     }
     history.push({
-      pathname: '/movies',
+      pathname: '/',
     });
   };
 
@@ -51,12 +55,14 @@ export function MovieDetailsPage() {
                 voteCount={movie.vote_count}
                 genres={movie.genres.map((genre) => genre.name).join(", ")}
             />}
-            <Route path={`${path}/cast`}>
-                    <MovieCast />
-            </Route>
-            <Route path={`${path}/review`}>
-                    <MovieReviews />
-            </Route>
+            <Suspense fallback={<Spinner />}>
+                <Route path={`${path}/cast`}>
+                        <MovieCast />
+                </Route>
+                <Route path={`${path}/review`}>
+                        <MovieReviews />
+                </Route>
+            </Suspense>
             </>
     )
 }

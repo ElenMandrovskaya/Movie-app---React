@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getReviews } from "../../services/apiService"
 import { Reviews } from "../../components/Reviews/Reviews";
 
-export function MovieReviews() {
+export default function MovieReviews() {
     const { movieId } = useParams();
     const [reviews, setReviews] = useState(null)
 
