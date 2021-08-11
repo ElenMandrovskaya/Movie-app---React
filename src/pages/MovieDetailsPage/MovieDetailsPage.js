@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
-import { Route, useRouteMatch, useParams, useHistory } from "react-router-dom";
+import { Route, useRouteMatch, useParams, useHistory, useLocation } from "react-router-dom";
 import { MoviesDetail } from "../../components/MoviesDetail/MoviesDetail";
 import { getMovieInfoById } from "../../services/apiService";
 import { MovieCast } from "../MovieCast/MovieCast";
 import { MovieReviews } from "../MovieReviews/MovieReviews";
+import { BackBtn } from "../../components/MoviesDetail/MoviesDetail.styled";
 
 export function MovieDetailsPage() {
     const { movieId } = useParams();
     const [movie, setMovie] = useState(null);
     const history = useHistory();
     const { path } = useRouteMatch();
+    const location = useLocation();
 // console.log(movieId)
     useEffect(() => {
         async function getMovie() {
@@ -26,8 +28,20 @@ export function MovieDetailsPage() {
         getMovie();
     }, [movieId, history]);
 
+    const OnGoBack = () => {
+    const { state } = location;
+    if (state) {
+      history.push(location.state.from);
+      return;
+    }
+    history.push({
+      pathname: '/movies',
+    });
+  };
+
     return (
-            <>
+        <>
+            <BackBtn onClick={OnGoBack} >Go Back</BackBtn>
             {movie && <MoviesDetail
                 title={movie.title}
                 posterPath={movie.poster_path}

@@ -45,12 +45,12 @@ display: flex;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
-  color: fuchsia;
+  color: #E010A1;
 `;
 
 export const MovieRate = styled.p`
   height: fit-content;
-  background-color: fuchsia;
+  background-color: #E010A1;
   border-radius: 5px;
   color: #ffffff;
   text-align: center;

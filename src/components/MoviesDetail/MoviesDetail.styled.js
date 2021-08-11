@@ -25,7 +25,7 @@ font-style: normal;
   font-size: 24px;
   line-height: 1.33;
   text-transform: uppercase;
-  color: fuchsia;
+  color: #E010A1;
   margin-bottom: 15px;
 `;
 
@@ -36,7 +36,7 @@ font-style: normal;
   line-height: 1.33;
   text-transform: uppercase;
   margin-bottom: 15px;
-  color: fuchsia;
+  color: #E010A1;
 `;
 
 export const ItemDesc = styled.p`
@@ -48,4 +48,14 @@ display: flex;
   line-height: 1.33;
   color: #000000;
   margin-bottom: 25px;
+`;
+export const BackBtn = styled.button`
+position: absolute;
+  border: 1px white solid;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: white;
+  background-color: #E010A1;
+  box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
 `;
