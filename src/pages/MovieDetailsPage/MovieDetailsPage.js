@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Route, useRouteMatch, useParams, useHistory } from "react-router-dom";
 import { MoviesDetail } from "../../components/MoviesDetail/MoviesDetail";
 import { getMovieInfoById } from "../../services/apiService";
-import {MovieCast} from "../MovieCast/MovieCast"
+import { MovieCast } from "../MovieCast/MovieCast";
+import { MovieReviews } from "../MovieReviews/MovieReviews";
 
 export function MovieDetailsPage() {
     const { movieId } = useParams();
@@ -39,7 +40,10 @@ export function MovieDetailsPage() {
             <Route path={`${path}/cast`}>
                     <MovieCast />
             </Route>
+            <Route path={`${path}/review`}>
+                    <MovieReviews />
+            </Route>
             </>
     )
 }
-getMovieInfoById(57353)
+// getMovieInfoById(57353)

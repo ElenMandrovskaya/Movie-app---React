@@ -1,10 +1,10 @@
 // import PropTypes from "prop-types";
 import { Photo, List, Actor, Name } from "./Cast.styled";
 
-export function Cast({credits}) {
+export function Cast({actors}) {
     return (
             <List>
-                {credits.map(({id, name, profile_path}) => (
+                {actors.map(({id, name, profile_path}) => (
                     <Actor key={id}>
                         <Photo src={`https://image.tmdb.org/t/p/original${profile_path}`}/>
                         <Name>{name}</Name>

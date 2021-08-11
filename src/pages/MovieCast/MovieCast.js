@@ -31,7 +31,7 @@ export function MovieCast() {
 
     return (
         <>
-            {actors && <Cast credits={actors} />}
+            {actors && <Cast actors={actors} />}
         </>
     )
 }

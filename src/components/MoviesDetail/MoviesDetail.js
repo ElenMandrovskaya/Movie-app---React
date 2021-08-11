@@ -15,8 +15,14 @@ export function MoviesDetail({ posterPath, title, genres, voteRate, voteCount, r
                 <ItemDesc>{overview}</ItemDesc>
                 <ItemTitle>Genres</ItemTitle>
                 <ItemDesc>{genres}</ItemDesc>
+                <ItemTitle>Additional info</ItemTitle>
+                <NavLink to={`${url}/cast`}
+                         className="info"
+                         activeClassName="activeinfo">Cast</NavLink>
+                <NavLink to={`${url}/review`}
+                         className="info"
+                         activeClassName="activeinfo">Review</NavLink>
             </DetailsContainer>
-            <NavLink to={`${url}/cast`}>Cast</NavLink>
         </MovieContainer>
     )
 }
