@@ -71,15 +71,12 @@ img {
     color: #e010a1;
     font-size: 18px;
     width: 360px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 .pagination li {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-li .disabled {
-    color: #aa7199;
 }
 .pagination li:not(:last-child) {
     margin-right: 10px;

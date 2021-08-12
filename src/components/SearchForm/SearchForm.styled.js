@@ -9,6 +9,7 @@ export const Form = styled.form`
   background-color: #fff;
   border-radius: 3px;
   overflow: hidden;
+  margin-bottom: 30px;
 `;
 export const SubmitBtn = styled.button`
   display: inline-block;

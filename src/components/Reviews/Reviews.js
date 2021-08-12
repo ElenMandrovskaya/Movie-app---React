@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { List, Item, ReviewerImg, ReviewerName, ReviewText } from "./Reviews.styled";
+import { List, Item, ReviewerImg, ReviewerName, ReviewText, Wrap } from "./Reviews.styled";
 import defaultImg from "../../images/default.png";
 
 export function Reviews({ reviews }) {
@@ -7,8 +7,10 @@ export function Reviews({ reviews }) {
         <List>
             {reviews.map(({ author_details, id, author, content }) => (
                 <Item key={id}>
-                    <ReviewerImg src={author_details.avatar_path.startsWith("/https") ? `${author_details.avatar_path}`.slice(1) : defaultImg}/>
-                    <ReviewerName>{author}</ReviewerName>
+                    <Wrap>
+                        <ReviewerImg src={author_details.avatar_path.startsWith("/https") ? `${author_details.avatar_path}`.slice(1) : defaultImg}/>
+                        <ReviewerName>{author}</ReviewerName>
+                    </Wrap>    
                     <ReviewText>{content}</ReviewText>
                 </Item>
             ))}
