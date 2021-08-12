@@ -66,3 +66,28 @@ img {
 .activeinfo {
     color: #e010a1;
 }
+.pagination {
+    display: flex;
+    color: #e010a1;
+    font-size: 18px;
+    width: 360px;
+    margin: 0 auto;
+}
+.pagination li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+li .disabled {
+    color: #aa7199;
+}
+.pagination li:not(:last-child) {
+    margin-right: 10px;
+}
+.activepage {
+    color: white;
+    width: 30px;
+    height: 30px;
+    background-color: #e010a1;
+    border-radius: 4px;
+}

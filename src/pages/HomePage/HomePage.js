@@ -2,13 +2,15 @@ import { useState, useEffect } from "react";
 import { useLocation, useHistory, useRouteMatch } from "react-router-dom";
 import { MovieList } from "../../components/MovieList/MovieList";
 import { getTranding } from "../../services/apiService";
-import {Spinner} from "../../components/Spinner/Spinner"
+import { Spinner } from "../../components/Spinner/Spinner";
+import { Pagination } from "../../components/Pagination/Pagination";
     
 export function HomePage() {
     const { isExact } = useRouteMatch();
     const history = useHistory();
     const [movies, setMovies] = useState([]);
     const [status, setStatus] = useState("idle");
+    const [totalPages, setTotalPages] = useState(null);
     // console.log(movies)
     const location = useLocation();
     const currentPage = Number(new URLSearchParams(location.search).get("page")) || 1;
@@ -21,8 +23,9 @@ export function HomePage() {
       setStatus("pending");
         try {
             const data = await getTranding(currentPage);
-            const { results } = data;
+            const { results, total_pages } = data;
             setMovies(results);
+            setTotalPages(total_pages);
             // console.log(results)
             setStatus("resolved");
       } catch (error) {
@@ -32,6 +35,15 @@ export function HomePage() {
     }
     getMovies();
     }, [currentPage, history, isExact])
+  
+  const onPageClick = ({selected}) => {
+     history.push({
+      ...location,
+      search: selected === 0 ? "":`page=${selected+1}`,
+     })
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  
   if (status === "idle") {
     return (
       <></>
@@ -46,7 +58,11 @@ export function HomePage() {
   {
     return (
     <>
-      {movies && <MovieList movies={movies} />}
+        {movies && <MovieList movies={movies} />}
+        <Pagination
+          totalPages={totalPages}
+          onClick={onPageClick}
+          currentPage={currentPage}/>
     </>
     )
   }
