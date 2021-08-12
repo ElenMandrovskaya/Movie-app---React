@@ -7,7 +7,7 @@ import { Pagination } from "../../components/Pagination/Pagination";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
     
-export function HomePage() {
+export default function HomePage() {
     const { isExact } = useRouteMatch();
     const history = useHistory();
     const [movies, setMovies] = useState([]);

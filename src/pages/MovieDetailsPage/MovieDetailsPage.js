@@ -12,7 +12,7 @@ import { Spinner } from "../../components/Spinner/Spinner";
 const MovieCast = lazy(() => import('../MovieCast/MovieCast'));
 const MovieReviews = lazy(() => import('../MovieReviews/MovieReviews'));
 
-export function MovieDetailsPage() {
+export default function MovieDetailsPage() {
     const { movieId } = useParams();
     const [movie, setMovie] = useState(null);
     const history = useHistory();
