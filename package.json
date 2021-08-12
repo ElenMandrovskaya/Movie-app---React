@@ -1,6 +1,5 @@
 {
   "name": "goit-react-hw-05-movies",
-  "homepage": "https://elenmandrovskaya.github.io/goit-react-hw-05-movies",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -23,7 +22,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "netlify deploy -p",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -46,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "netlify-cli": "^6.2.4"
   }
 }
