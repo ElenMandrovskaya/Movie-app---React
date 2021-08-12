@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Form, SubmitBtn, BtnLabel, Input } from "./SearchForm.styled";
 
 export function SearchForm({ onSearch }) {
@@ -25,3 +26,7 @@ export function SearchForm({ onSearch }) {
           </Form>
     );
 }
+
+SearchForm.propTypes = {
+        onSubmit: PropTypes.func,
+    }

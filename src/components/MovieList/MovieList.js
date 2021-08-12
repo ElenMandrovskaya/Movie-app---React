@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PropTypes from "prop-types";
 import { MovieCard } from "../MovieCard/MovieCard";
 import { List } from './MovieList.styled';
 import { getGenresList } from "../../services/apiService"
@@ -31,4 +32,8 @@ export function MovieList({ movies }) {
             ))}
         </List>
   )
+}
+
+MovieList.propTypes = {
+    movies: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired
 }
