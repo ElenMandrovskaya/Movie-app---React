@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation, useHistory } from "react-router-dom";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { SearchForm } from "../../components/SearchForm/SearchForm";
 import { MovieList } from "../../components/MovieList/MovieList";
 import { getSearchMovies } from "../../services/apiService";
@@ -26,7 +28,7 @@ export function MoviesPage() {
             const data = await getSearchMovies(searchQuery, currentPage);
             const { results, total_pages } = data;
             if (!results.length) {
-          throw new Error("No results found");
+          throw new Error("Results not found");
         }
             setMovies(results);
             setTotalPages(total_pages);
@@ -34,6 +36,7 @@ export function MoviesPage() {
         }
         catch (error) {
             console.log(error);
+            toast.warning("Results not found");
             setStatus("rejected");
       }
     }

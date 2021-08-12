@@ -1,5 +1,7 @@
 import { useEffect, useState, Suspense, lazy } from "react";
 import { Route, useRouteMatch, useParams, useHistory, useLocation } from "react-router-dom";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { MoviesDetail } from "../../components/MoviesDetail/MoviesDetail";
 import { getMovieInfoById } from "../../services/apiService";
 // import { MovieCast } from "../MovieCast/MovieCast";
@@ -27,6 +29,7 @@ export function MovieDetailsPage() {
                 setMovie(movie);
             } catch (error) {
                 history.push("/");
+                toast.warning("Page not found")
             }
         }
         getMovie();
