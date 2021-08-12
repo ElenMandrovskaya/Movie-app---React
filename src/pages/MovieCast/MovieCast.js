@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getCast } from "../../services/apiService";
 import { Cast } from "../../components/Cast/Cast";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function MovieCast() {
     const { movieId } = useParams();
@@ -20,11 +22,12 @@ export default function MovieCast() {
                 
             } catch (error) {
                 console.log(error)
+                toast.info("Cast not found")
             }
             const cast = await getCast(movieId);
 
             setActors(cast);
-            window.scrollTo({ top: 650, behavior: "smooth" });
+            window.scrollTo({ top: 560, behavior: "smooth" });
         }
         getCastDetails();
     }, [movieId])

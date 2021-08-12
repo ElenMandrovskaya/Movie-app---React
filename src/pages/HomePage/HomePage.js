@@ -4,6 +4,8 @@ import { MovieList } from "../../components/MovieList/MovieList";
 import { getTranding } from "../../services/apiService";
 import { Spinner } from "../../components/Spinner/Spinner";
 import { Pagination } from "../../components/Pagination/Pagination";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
     
 export function HomePage() {
     const { isExact } = useRouteMatch();
@@ -18,7 +20,8 @@ export function HomePage() {
     
     async function getMovies() {
         if (!isExact) {
-      history.push("/");
+          history.push("/");
+          toast.warning("Page not found");
         }
       setStatus("pending");
         try {
@@ -62,7 +65,8 @@ export function HomePage() {
         <Pagination
           totalPages={totalPages}
           onClick={onPageClick}
-          currentPage={currentPage}/>
+          currentPage={currentPage} />
+        
     </>
     )
   }

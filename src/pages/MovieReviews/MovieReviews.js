@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getReviews } from "../../services/apiService"
 import { Reviews } from "../../components/Reviews/Reviews";
+import { toast } from "react-toastify";
 
 export default function MovieReviews() {
     const { movieId } = useParams();
@@ -14,19 +15,19 @@ export default function MovieReviews() {
             const reviews = await getReviews(movieId);
             
                 if (!reviews.length) {
-                    throw new Error("No reviews found");
+                    throw new Error("Reviews not found");
                 }
 
             setReviews(reviews);
                 
             } catch (error) {
-                // .error("No reviews found");
+                toast.warning("Reviews not found");
                 console.log(error);
             }
             const reviews = await getReviews(movieId);
 
             setReviews(reviews);
-            // window.scrollTo({ top: 650, behavior: "smooth" });
+            window.scrollTo({ top: 560, behavior: "smooth" });
         }
         getReviewsDetails();
     }, [movieId])

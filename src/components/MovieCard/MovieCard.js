@@ -31,5 +31,5 @@ MovieCard.propTypes = {
     posterPath: PropTypes.string,
     title: PropTypes.string.isRequired,
     rating: PropTypes.number,
-    genres: PropTypes.array,
+    genres: PropTypes.string,
 }

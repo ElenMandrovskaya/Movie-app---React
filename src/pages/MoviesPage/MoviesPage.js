@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useLocation, useHistory } from "react-router-dom";
-
 import { SearchForm } from "../../components/SearchForm/SearchForm";
 import { MovieList } from "../../components/MovieList/MovieList";
 import { getSearchMovies } from "../../services/apiService";
 import { Spinner } from "../../components/Spinner/Spinner";
+import { Pagination } from "../../components/Pagination/Pagination";
 
 export function MoviesPage() {
     // const [searchQuery, setSearchQuery] = useState("");
@@ -14,6 +14,7 @@ export function MoviesPage() {
     const location = useLocation();
     const currentPage = Number(new URLSearchParams(location.search).get("page")) || 1;
     const searchQuery = new URLSearchParams(location.search).get("query");
+    const [totalPages, setTotalPages] = useState(null);
 
     useEffect(() => {
         if (!searchQuery) { 
@@ -23,11 +24,12 @@ export function MoviesPage() {
             setStatus("pending");
         try {
             const data = await getSearchMovies(searchQuery, currentPage);
-            const { results } = data;
+            const { results, total_pages } = data;
             if (!results.length) {
           throw new Error("No results found");
         }
             setMovies(results);
+            setTotalPages(total_pages);
             setStatus("resolved");
         }
         catch (error) {
@@ -49,6 +51,13 @@ export function MoviesPage() {
         search: `query=${query}`,
         });
     }
+    const onPageClick = ({selected}) => {
+     history.push({
+      ...location,
+      search: selected === 0 ? "":`page=${selected+1}`,
+     })
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 
         if (status === "idle") {
             return (
@@ -68,6 +77,10 @@ export function MoviesPage() {
                 <>
                 <SearchForm onSearch={handleQueryChange} />
                 {movies && <MovieList movies={movies} />}
+                <Pagination
+                totalPages={totalPages}
+                onClick={onPageClick}
+                currentPage={currentPage} />
                 </>
             )
         }

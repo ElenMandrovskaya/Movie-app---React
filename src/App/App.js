@@ -1,4 +1,6 @@
 import { Route, Switch } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Container } from "./App.styled";
 import { AppBar } from "../components/AppBar/AppBar";
 import { HomePage } from "../pages/HomePage/HomePage";
@@ -23,6 +25,7 @@ export default function App() {
                 </Route>
             </Switch>
             </Container>
+            <ToastContainer />
             </>
   )
 }
