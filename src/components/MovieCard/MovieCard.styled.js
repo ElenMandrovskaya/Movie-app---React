@@ -6,7 +6,7 @@ export const Card = styled.li`
   background-color: white;
   border-radius: 5px;
   box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   transition: all 250ms ease-in-out;
     &:hover,
     &:focus {
@@ -17,13 +17,18 @@ export const Card = styled.li`
 
 export const Poster = styled.img`
     margin-bottom: 10px;
+    width: 300px;
     height: 410px;
     cursor: pointer;
     border-radius: 5px;
+    object-fit: cover;
 `;
 
 export const MovieTitle = styled.h2`
-  font-weight: 700;
+max-width: 260px;
+height: 35px;
+margin: 0 auto;
+  font-weight: 600;
   font-size: 14px;
   text-transform: uppercase;
   color: #E010A1;
@@ -32,6 +37,8 @@ export const MovieTitle = styled.h2`
 `;
 
 export const MovieInfo = styled.div`
+/* max-width: 270px; */
+
   display: flex;
   justify-content: space-between;
   align-items: center;
