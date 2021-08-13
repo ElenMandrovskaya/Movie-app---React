@@ -1,4 +1,4 @@
-import { useEffect, useState, Suspense, lazy } from "react";
+import { useEffect, useState, Suspense, lazy, useRef } from "react";
 import { Route, useRouteMatch, useParams, useHistory, useLocation } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -18,6 +18,7 @@ export default function MovieDetailsPage() {
     const history = useHistory();
     const { path } = useRouteMatch();
     const location = useLocation();
+    const locationState = useRef(location.state?.from).current;
 // console.log(movieId)
     useEffect(() => {
         async function getMovie() {
@@ -36,19 +37,12 @@ export default function MovieDetailsPage() {
     }, [movieId, history]);
 
     const OnGoBack = () => {
-    const { state } = location;
-    if (state) {
-      history.push(location.state.from);
-      return;
-    }
-    history.push({
-      pathname: '/',
-    });
+    history.push(locationState ?? "/");
   };
 
     return (
         <>
-            <BackBtn onClick={OnGoBack} >Go Back</BackBtn>
+            <BackBtn onClick={OnGoBack}>Go Back</BackBtn>
             {movie && <MoviesDetail
                 title={movie.title}
                 posterPath={movie.poster_path}

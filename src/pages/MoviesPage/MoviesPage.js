@@ -51,13 +51,13 @@ export default function MoviesPage() {
         setMovies([]);
         history.push({
         ...location,
-        search: `query=${query}`,
+        search: `query=${query}&page=${1}`,
         });
     }
     const onPageClick = ({selected}) => {
      history.push({
       ...location,
-      search: selected === 0 ? "":`page=${selected+1}`,
+      search: `query=${searchQuery}&page=${selected + 1}`,
      })
     window.scrollTo({ top: 0, behavior: "smooth" });
   }

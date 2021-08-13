@@ -3,12 +3,13 @@ import { List, Item, ReviewerImg, ReviewerName, ReviewText, Wrap } from "./Revie
 import defaultImg from "../../images/default.png";
 
 export function Reviews({ reviews }) {
+    
     return (
         <List>
             {reviews.map(({ author_details, id, author, content }) => (
                 <Item key={id}>
                     <Wrap>
-                        <ReviewerImg src={author_details.avatar_path.startsWith("/https") ? `${author_details.avatar_path}`.slice(1) : defaultImg}/>
+                        <ReviewerImg src={author_details.avatar_path === null || author_details.avatar_path.startsWith("/http") ? `${author_details.avatar_path}`.slice(1) : defaultImg}/>
                         <ReviewerName>{author}</ReviewerName>
                     </Wrap>    
                     <ReviewText>{content}</ReviewText>
