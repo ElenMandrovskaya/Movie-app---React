@@ -45,7 +45,7 @@ export default function MoviesPage() {
 
     const handleQueryChange = query => {
         if (!query || query === searchQuery) {
-            //   toast.info('Please, enter new query!');
+              toast.info('Please, enter new query!');
             return;
         }
         setMovies([]);
