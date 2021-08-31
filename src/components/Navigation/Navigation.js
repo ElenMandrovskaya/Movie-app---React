@@ -1,9 +1,19 @@
+import { BsFilm } from "react-icons/bs";
 import { NavList, NavItem } from "./Navigation.styled";
 import { NavLink } from "react-router-dom";
+
 
 export function Navigation() {
     return (
         <NavList>
+            <NavItem>
+                <NavLink
+                    exact
+                    to="/"
+                    className="navlink"
+                    >
+                    <BsFilm /></NavLink>
+            </NavItem>
             <NavItem>
                 <NavLink
                     exact

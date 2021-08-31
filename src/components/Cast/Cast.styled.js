@@ -16,7 +16,7 @@ padding: 7px;
     &:hover,
     &:focus {
       transform: scale(1.05);
-      box-shadow: 0px 0px 10px 4px #E010A1;
+      box-shadow: 0px 0px 10px 4px #fd004b;
     }
 `;
 export const Photo = styled.img`
@@ -29,7 +29,7 @@ export const Photo = styled.img`
 export const Name = styled.p`
 margin-top: 8px;
 text-align: center;
-background-color: #E010A1;
+background-color: #fd004b;
 color: white;
 border-radius: 5px;
 font-weight: 600;

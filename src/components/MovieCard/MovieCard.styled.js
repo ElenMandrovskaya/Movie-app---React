@@ -11,7 +11,7 @@ export const Card = styled.li`
     &:hover,
     &:focus {
       transform: scale(1.05);
-      box-shadow: 0px 0px 10px 4px #E010A1;
+      box-shadow: 0px 0px 10px 4px #fd004b;
     }
 `;
 
@@ -31,7 +31,7 @@ margin: 0 auto;
   font-weight: 600;
   font-size: 14px;
   text-transform: uppercase;
-  color: #E010A1;
+  color: #fd004b;
   margin-bottom: 5px;
   text-align: center;
 `;
@@ -57,7 +57,7 @@ export const MovieGenre = styled.p`
 
 export const MovieRate = styled.p`
   height: fit-content;
-  background-color: #E010A1;
+  background-color: #fd004b;
   border-radius: 5px;
   color: #fff;
   text-align: center;

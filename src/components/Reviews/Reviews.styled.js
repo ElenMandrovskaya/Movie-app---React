@@ -18,7 +18,7 @@ export const Item = styled.li`
     &:hover,
     &:focus {
       transform: scale(1.05);
-      box-shadow: 0px 0px 10px 4px #E010A1;
+      box-shadow: 0px 0px 10px 4px #fd004b;
     }
   &:not(:last-child) {
     margin-bottom: 20px;
@@ -38,7 +38,7 @@ export const ReviewerImg = styled.img`
 export const ReviewerName = styled.p`
 margin-top: 15px;
 text-align: center;
-background-color: #E010A1;
+background-color: #fd004b;
 color: white;
 border-radius: 5px;
 font-weight: 600;

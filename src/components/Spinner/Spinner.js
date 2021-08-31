@@ -10,6 +10,6 @@ const override = css`
 
 export function Spinner() {
   return (
-      <GridLoader color="#E010A1" loading={useState(true)} css={override} size={80} />
+    <GridLoader color="#fd004b" loading={useState(true)} css={override} size={100} margin={20}/>
   );
 }

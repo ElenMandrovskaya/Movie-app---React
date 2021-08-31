@@ -1,11 +1,12 @@
 import ReactPaginate from 'react-paginate';
 import PropTypes from "prop-types";
+import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 
 export function Pagination({totalPages, onClick, currentPage}) {
     return (
         <ReactPaginate
-            previousLabel={'< prev'}
-            nextLabel={'next >'}
+            previousLabel={<AiFillCaretLeft />}
+            nextLabel={<AiFillCaretRight />}
             breakLabel={'...'}
             breakClassName={'break-me'}
             pageCount={totalPages}

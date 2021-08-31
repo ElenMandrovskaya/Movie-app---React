@@ -8,6 +8,8 @@ import { getMovieInfoById } from "../../services/apiService";
 // import { MovieReviews } from "../MovieReviews/MovieReviews";
 import { BackBtn } from "../../components/MoviesDetail/MoviesDetail.styled";
 import { Spinner } from "../../components/Spinner/Spinner";
+import { FiArrowLeft } from "react-icons/fi";
+
 
 const MovieCast = lazy(() => import('../MovieCast/MovieCast'));
 const MovieReviews = lazy(() => import('../MovieReviews/MovieReviews'));
@@ -42,7 +44,7 @@ export default function MovieDetailsPage() {
 
     return (
         <>
-            <BackBtn onClick={OnGoBack}>Go Back</BackBtn>
+            <BackBtn onClick={OnGoBack}><FiArrowLeft /></BackBtn>
             {movie && <MoviesDetail
                 title={movie.title}
                 posterPath={movie.poster_path}

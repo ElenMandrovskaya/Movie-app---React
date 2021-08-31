@@ -13,7 +13,7 @@ export const MovieContainer = styled.div`
     &:hover,
     &:focus {
       transform: scale(1.05);
-      box-shadow: 0px 0px 10px 4px #E010A1;
+      box-shadow: 0px 0px 10px 4px #fd004b;
     }
 `;
 export const DetailsContainer = styled.div`
@@ -31,7 +31,7 @@ font-style: normal;
   font-size: 24px;
   line-height: 1.33;
   text-transform: uppercase;
-  color: #E010A1;
+  color: #fd004b;
   margin-bottom: 15px;
 `;
 
@@ -41,7 +41,7 @@ export const ItemTitle = styled.p`
   line-height: 1.33;
   text-transform: uppercase;
   margin-bottom: 15px;
-  color: #E010A1;
+  color: #fd004b;
 `;
 
 export const ItemDesc = styled.p`
@@ -55,11 +55,16 @@ export const ItemDesc = styled.p`
 `;
 export const BackBtn = styled.button`
   position: absolute;
-  border: 1px white solid;
+  border: 1px solid;
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  color: white;
-  background-color: #E010A1;
-  box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* color: white; */
+  color: #fd004b;
+  box-shadow: 0px 0px 10px 4px #fd004b;
+ 
 `;
