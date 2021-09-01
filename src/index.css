@@ -93,6 +93,7 @@ img {
 }
 .dark-theme {
     background-color: rgb(50, 50, 50);
+    height: 100vh;
 }
 .theme-switch__toggle:checked + .theme-switch__track {
     background-color: #d3d3d4;
