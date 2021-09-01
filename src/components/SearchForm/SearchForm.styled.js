@@ -10,6 +10,7 @@ export const Form = styled.form`
   border-radius: 3px;
   overflow: hidden;
   margin-bottom: 30px;
+  box-shadow: 0px 0px 10px 4px #fd004b;
 `;
 export const SubmitBtn = styled.button`
   display: inline-block;

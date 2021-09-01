@@ -2,12 +2,13 @@ import { lazy, Suspense } from 'react';
 import { Route, Switch } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Container } from "./App.styled";
+import { useSelector } from "react-redux";
+
+import getTheme from '../redux/theme/theme-selectors';
+import { BgLayuot, Container } from "./App.styled";
 import { AppBar } from "../components/AppBar/AppBar";
-// import { HomePage } from "../pages/HomePage/HomePage";
-// import { MoviesPage } from "../pages/MoviesPage/MoviesPage";
-// import { MovieDetailsPage } from "../pages/MovieDetailsPage/MovieDetailsPage";
 import { Spinner } from '../components/Spinner/Spinner';
+import ThemeSwitch from '../components/ThemeSwitch/ThemeSwitch'
 
 const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
 const MoviesPage = lazy(() => import("../pages/MoviesPage/MoviesPage"));
@@ -15,8 +16,11 @@ const MovieDetailsPage = lazy(() => import("../pages/MovieDetailsPage/MovieDetai
 
 
 export default function App() {
+    const darkTheme = useSelector((state) => getTheme(state));
+    // console.log(darkTheme)
     return (
-        <>
+        <BgLayuot className={darkTheme ? "dark-theme" : ''}>
+            <ThemeSwitch />
             <AppBar />
             <Container>
                 <Suspense fallback={<Spinner/>}>
@@ -34,6 +38,6 @@ export default function App() {
                 </Suspense>
             </Container>
             <ToastContainer />
-            </>
+            </BgLayuot>
   )
 }

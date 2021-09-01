@@ -3,8 +3,8 @@ import { Navigation } from "../Navigation/Navigation";
 
 export function AppBar() {
     return (
-    <Header>
-      <Navigation />
+      <Header>
+        <Navigation />
     </Header>
   )
 }

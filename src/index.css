@@ -54,7 +54,8 @@ img {
     font-size: 30px;
 }
 .activelink {
-    color: #ccc6c6;
+    color: #000;
+    text-shadow: #fd004b 0px 0px 8px;
 }
 .info {
     font-size: 16px;
@@ -89,4 +90,19 @@ img {
     background-color: #fd004b;
     border-radius: 4px;
     padding: 3px;
+}
+.dark-theme {
+    background-color: rgb(50, 50, 50);
+}
+.theme-switch__toggle:checked + .theme-switch__track {
+    background-color: #d3d3d4;
+}
+
+.theme-switch__toggle:checked ~ .theme-switch__marker {
+    transform: translateX(35px);
+}
+
+.theme-switch__toggle:focus + .theme-switch__track,
+.theme-switch__toggle:active + .theme-switch__track {
+    box-shadow: 0 0 0 3px #2196f3;
 }

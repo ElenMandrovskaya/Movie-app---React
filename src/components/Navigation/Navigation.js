@@ -12,7 +12,7 @@ export function Navigation() {
                     to="/"
                     className="navlink"
                     >
-                    <BsFilm /></NavLink>
+                    <BsFilm size='35'/></NavLink>
             </NavItem>
             <NavItem>
                 <NavLink
