@@ -34,4 +34,10 @@ color: white;
 border-radius: 5px;
 font-weight: 600;
 `;
-
+export const Role = styled.p`
+margin-top: 8px;
+text-align: center;
+color: #fd004b;
+font-weight: 600;
+font-style: italic;
+`;

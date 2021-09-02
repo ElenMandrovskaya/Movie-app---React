@@ -37,6 +37,12 @@ export async function getReviews(movieId) {
 export async function getGenresList() {
     const url = `/genre/movie/list?api_key=${API_KEY}`;
     const { data } = await axios.get(url);
-   
     return data.genres;    
+}
+
+export async function getActorsInfo(person_id) {
+    const url = `/person/${person_id}?api_key=${API_KEY}`;
+    const { data } = await axios.get(url);
+    // console.log(data)
+    return data;    
 }

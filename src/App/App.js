@@ -9,6 +9,7 @@ import { BgLayuot, Container } from "./App.styled";
 import { AppBar } from "../components/AppBar/AppBar";
 import { Spinner } from '../components/Spinner/Spinner';
 import ThemeSwitch from '../components/ThemeSwitch/ThemeSwitch'
+import ActorPage from '../pages/ActorPage';
 
 const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
 const MoviesPage = lazy(() => import("../pages/MoviesPage/MoviesPage"));
@@ -33,6 +34,9 @@ export default function App() {
                         </Route>
                         <Route path="/movies/:movieId">
                             <MovieDetailsPage />
+                        </Route>
+                        <Route path="/actor">
+                            <ActorPage />
                         </Route>
                     </Switch>
                 </Suspense>
