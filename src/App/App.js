@@ -35,7 +35,7 @@ export default function App() {
                         <Route path="/movies/:movieId">
                             <MovieDetailsPage />
                         </Route>
-                        <Route path="/actor">
+                        <Route path="/actor/:actorId">
                             <ActorPage />
                         </Route>
                     </Switch>

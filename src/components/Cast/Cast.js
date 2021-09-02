@@ -1,12 +1,11 @@
 import PropTypes from "prop-types";
 import { Photo, List, Actor, Name, Role } from "./Cast.styled";
 import defaultImg from "../../images/default.png";
-import { NavLink, useRouteMatch } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 export function Cast({ actors }) {
      const location = useLocation();
-    // const { url } = useRouteMatch();
-    // console.log(url)
+    // console.log(location)
     return (
             <List>
             {actors.map(({ id, name, profile_path, character }) => (

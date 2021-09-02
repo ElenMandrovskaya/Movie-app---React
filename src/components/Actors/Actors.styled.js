@@ -1,8 +1,14 @@
 import styled from "@emotion/styled";
 
 export const ActorContainer = styled.div`
+display: flex;
 `;
 export const ActorPhoto = styled.img`
+  display: block;
+  margin: 0 auto;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
 `;
 export const ActorsInfoContainer = styled.div`
 `;
