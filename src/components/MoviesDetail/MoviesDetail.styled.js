@@ -54,7 +54,8 @@ export const ItemDesc = styled.p`
   margin-bottom: 25px;
 `;
 export const BackBtn = styled.button`
-  position: absolute;
+  position: fixed;
+  left: 30px;
   border: 1px solid;
   border-radius: 50%;
   width: 50px;
@@ -66,5 +67,6 @@ export const BackBtn = styled.button`
   /* color: white; */
   color: #fd004b;
   box-shadow: 0px 0px 10px 4px #fd004b;
+  z-index: 999;
  
 `;

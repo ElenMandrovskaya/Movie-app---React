@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getReviews } from "../../services/apiService"
-import { Reviews } from "../../components/Reviews/Reviews";
+import { getReviews } from "../services/apiService"
+import { Reviews } from "../components/Reviews/Reviews";
 import { toast } from "react-toastify";
 
 export default function MovieReviews() {

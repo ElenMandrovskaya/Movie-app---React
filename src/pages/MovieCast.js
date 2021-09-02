@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getCast } from "../../services/apiService";
-import { Cast } from "../../components/Cast/Cast";
+import { getCast } from "../services/apiService";
+import { Cast } from "../components/Cast/Cast";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

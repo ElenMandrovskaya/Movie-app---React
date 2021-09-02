@@ -9,16 +9,16 @@ import { BgLayuot, Container } from "./App.styled";
 import { AppBar } from "../components/AppBar/AppBar";
 import { Spinner } from '../components/Spinner/Spinner';
 import ThemeSwitch from '../components/ThemeSwitch/ThemeSwitch'
-import ActorPage from '../pages/ActorPage';
 
-const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
-const MoviesPage = lazy(() => import("../pages/MoviesPage/MoviesPage"));
-const MovieDetailsPage = lazy(() => import("../pages/MovieDetailsPage/MovieDetailsPage"));
-
+const HomePage = lazy(() => import("../pages/HomePage"));
+const MoviesPage = lazy(() => import("../pages/MoviesPage"));
+const MovieDetailsPage = lazy(() => import("../pages/MovieDetailsPage"));
+const ActorPage  = lazy(() => import("../pages/ActorPage"));
 
 export default function App() {
+
     const darkTheme = useSelector((state) => getTheme(state));
-    // console.log(darkTheme)
+    
     return (
         <BgLayuot className={darkTheme ? "dark-theme" : ''}>
             <ThemeSwitch />

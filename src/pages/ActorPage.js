@@ -1,19 +1,20 @@
-import { useEffect, useState, Suspense, lazy, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams, useHistory, useLocation } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { Actor } from "../components/Actors/Actors";
 import { getActorsInfo } from "../services/apiService";
-import { Spinner } from "../components/Spinner/Spinner";
+import { BackBtn } from "../components/MoviesDetail/MoviesDetail.styled";
+import { FiArrowLeft } from "react-icons/fi";
 
 
 export default function ActorPage() {
     const { actorId } = useParams();
     const [actor, setActor] = useState(null);
     const history = useHistory();
-    // const location = useLocation();
-    // const locationState = useRef(location.state?.from).current;
+    const location = useLocation();
+    const locationState = useRef(location.state?.from).current;
     // console.log(actorId)
 
      useEffect(() => {
@@ -31,9 +32,13 @@ export default function ActorPage() {
         }
         getActor();
      }, [actorId, history]);
+       const OnGoBack = () => {
+            history.push(locationState ?? "/");
+        };
     
     return (
         <>
+            <BackBtn onClick={OnGoBack}><FiArrowLeft /></BackBtn>
             {actor && <Actor
                 photo={actor.profile_path}
                 name={actor.name}

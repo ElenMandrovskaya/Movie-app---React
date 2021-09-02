@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { SearchForm } from "../../components/SearchForm/SearchForm";
-import { MovieList } from "../../components/MovieList/MovieList";
-import { getSearchMovies } from "../../services/apiService";
-import { Spinner } from "../../components/Spinner/Spinner";
-import { Pagination } from "../../components/Pagination/Pagination";
+import { SearchForm } from "../components/SearchForm/SearchForm";
+import { MovieList } from "../components/MovieList/MovieList";
+import { getSearchMovies } from "../services/apiService";
+import { Spinner } from "../components/Spinner/Spinner";
+import { Pagination } from "../components/Pagination/Pagination";
 
 export default function MoviesPage() {
     // const [searchQuery, setSearchQuery] = useState("");

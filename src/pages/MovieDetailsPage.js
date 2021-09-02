@@ -2,17 +2,16 @@ import { useEffect, useState, Suspense, lazy, useRef } from "react";
 import { Route, useRouteMatch, useParams, useHistory, useLocation } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { MoviesDetail } from "../../components/MoviesDetail/MoviesDetail";
-import { getMovieInfoById } from "../../services/apiService";
-// import { MovieCast } from "../MovieCast/MovieCast";
-// import { MovieReviews } from "../MovieReviews/MovieReviews";
-import { BackBtn } from "../../components/MoviesDetail/MoviesDetail.styled";
-import { Spinner } from "../../components/Spinner/Spinner";
+import { MoviesDetail } from "../components/MoviesDetail/MoviesDetail";
+import { getMovieInfoById } from "../services/apiService";
+
+import { BackBtn } from "../components/MoviesDetail/MoviesDetail.styled";
+import { Spinner } from "../components/Spinner/Spinner";
 import { FiArrowLeft } from "react-icons/fi";
 
 
-const MovieCast = lazy(() => import('../MovieCast/MovieCast'));
-const MovieReviews = lazy(() => import('../MovieReviews/MovieReviews'));
+const MovieCast = lazy(() => import('./MovieCast'));
+const MovieReviews = lazy(() => import('./MovieReviews'));
 
 export default function MovieDetailsPage() {
     const { movieId } = useParams();

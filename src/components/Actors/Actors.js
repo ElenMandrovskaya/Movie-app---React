@@ -7,10 +7,10 @@ export function Actor({name, place, birthday, bio, photo}) {
             <ActorPhoto src={photo ? `https://image.tmdb.org/t/p/original${photo}` : defaultImg}/>
             <ActorsInfoContainer>
                 <ActorName>{name}</ActorName>
-                <ActorBirthday>{birthday}</ActorBirthday>
-                <ActorPlace>{place}</ActorPlace>
+                <ActorBirthday>Date of birth: {birthday}</ActorBirthday>
+                <ActorPlace>Place of birth: {place}</ActorPlace>
                 <ActorBio>{bio}</ActorBio>
-                <MoviesWithActor>list</MoviesWithActor>
+                <MoviesWithActor>Movie list</MoviesWithActor>
             </ActorsInfoContainer>
         </ActorContainer>
     )

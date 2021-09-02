@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useLocation, useHistory, useRouteMatch } from "react-router-dom";
-import { MovieList } from "../../components/MovieList/MovieList";
-import { getTranding } from "../../services/apiService";
-import { Spinner } from "../../components/Spinner/Spinner";
-import { Pagination } from "../../components/Pagination/Pagination";
+import { MovieList } from "../components/MovieList/MovieList";
+import { getTranding } from "../services/apiService";
+import { Spinner } from "../components/Spinner/Spinner";
+import { Pagination } from "../components/Pagination/Pagination";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
     
