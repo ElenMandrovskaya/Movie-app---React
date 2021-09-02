@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const ActorContainer = styled.div`
 display: flex;
-justify-content: space-between;
+/* justify-content: space-between; */
 align-items: flex-start;
 /* width: 800px; */
 margin: 0 auto;
