@@ -46,3 +46,11 @@ export async function getActorsInfo(person_id) {
     // console.log(data)
     return data;    
 }
+
+export async function getMoviesByActor(actorName) {
+    const url = `/search/person?api_key=${API_KEY}&query=${actorName}`;
+    const { data } = await axios.get(url);
+    // console.log(data)
+    return data;    
+}
+getMoviesByActor('monica')

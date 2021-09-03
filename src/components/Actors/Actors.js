@@ -1,6 +1,7 @@
 import { ActorBirthday, ActorBio, ActorContainer, ActorName, ActorPhoto, ActorPlace, ActorsInfoContainer, MoviesWithActor } from "./Actors.styled";
 import defaultImg from "../../images/default.png";
 import moment from "moment";
+import { KnownAsList } from "../MoviesByActor/MovieListByActor";
 
 
 export function Actor({ name, place, birthday, bio, photo }) {
@@ -19,7 +20,9 @@ export function Actor({ name, place, birthday, bio, photo }) {
                 {birthday && <ActorBirthday>Date of birth: {birth} ({currentAge} years)</ActorBirthday>}
                 {place && <ActorPlace>Place of birth: {place}</ActorPlace>}
                 <ActorBio>{bio}</ActorBio>
-                <MoviesWithActor>Movie list</MoviesWithActor>
+                <MoviesWithActor> 
+                    <KnownAsList actorName={name}/>
+                </MoviesWithActor>
             </ActorsInfoContainer>
         </ActorContainer>
     )
