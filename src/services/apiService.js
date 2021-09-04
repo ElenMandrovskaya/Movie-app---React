@@ -5,7 +5,7 @@ axios.defaults.baseURL = BASE_URL;
 
 export async function getTranding(page) {
     const url = `/trending/movie/week?api_key=${API_KEY}&page=${page}`;
-    const {data} = await axios.get(url);
+    const { data } = await axios.get(url);
     return data;
 }
 
@@ -43,14 +43,12 @@ export async function getGenresList() {
 export async function getActorsInfo(person_id) {
     const url = `/person/${person_id}?api_key=${API_KEY}`;
     const { data } = await axios.get(url);
-    // console.log(data)
     return data;    
 }
 
 export async function getMoviesByActor(actorName) {
     const url = `/search/person?api_key=${API_KEY}&query=${actorName}`;
     const { data } = await axios.get(url);
-    // console.log(data)
-    return data;    
+    const { results } = data;
+    return results;    
 }
-getMoviesByActor('monica')

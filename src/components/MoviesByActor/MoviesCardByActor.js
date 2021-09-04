@@ -1,9 +1,8 @@
-import { MovieCardByActor, MovieInfoByActor, MoviePosterByActor, MoviesListByActor, MovieTitleByActor, MovieYearByActor } from "./MoviesByActor.styled";
+import { MovieCardByActor, MovieInfoByActor, MoviePosterByActor, MovieTitleByActor, MovieYearByActor } from "./MoviesByActor.styled";
 
-export function FilmsByActor() {
-    
+export function KnownAsCard({known_for}) {
+    console.log(known_for)
     return (
-        <MoviesListByActor>
             <MovieCardByActor>
                 <MoviePosterByActor />
                 <MovieInfoByActor>
@@ -11,6 +10,5 @@ export function FilmsByActor() {
                     <MovieYearByActor></MovieYearByActor>
                 </MovieInfoByActor>
             </MovieCardByActor>
-        </MoviesListByActor>
     )
 }

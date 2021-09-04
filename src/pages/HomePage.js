@@ -8,12 +8,12 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
     
 export default function HomePage() {
+
     const { isExact } = useRouteMatch();
     const history = useHistory();
     const [movies, setMovies] = useState([]);
     const [status, setStatus] = useState("idle");
     const [totalPages, setTotalPages] = useState(null);
-    // console.log(movies)
     const location = useLocation();
     const currentPage = Number(new URLSearchParams(location.search).get("page")) || 1;
     useEffect(() => {
@@ -29,7 +29,6 @@ export default function HomePage() {
             const { results, total_pages } = data;
             setMovies(results);
             setTotalPages(total_pages);
-            // console.log(results)
             setStatus("resolved");
       } catch (error) {
           console.log(error);
