@@ -17,7 +17,7 @@ box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
 export const ActorPhoto = styled.img`
 display: block;
 margin-right: 20px; 
-height: 550px;
+height: 570px;
 cursor: pointer;
 border-radius: 5px;
 object-fit: cover;
@@ -34,12 +34,11 @@ font-style: normal;
   margin-bottom: 15px;
 `;
 export const ActorBio = styled.p`
-  display: flex;
-  justify-content: start;
+  display: inline-block;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
-  color: #000000;
+  color: #000;
   margin-bottom: 15px;
 `;
 export const ActorPlace = styled.p`
@@ -51,18 +50,22 @@ export const ActorPlace = styled.p`
   color: #fd004b;
 `;
 export const ActorBirthday = styled.p`
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 1.33;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-  color: #fd004b;
+font-weight: 600;
+font-size: 16px;
+line-height: 1.33;
+text-transform: uppercase;
+margin-bottom: 12px;
+color: #fd004b;
 `;
 export const KnownMovTitle = styled.p`
 font-weight: 600;
-  font-size: 16px;
-  line-height: 1.33;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-  color: #fd004b;
+font-size: 16px;
+line-height: 1.33;
+text-transform: uppercase;
+margin-bottom: 12px;
+color: #fd004b;
+`;
+export const MoreBtn = styled.a`
+color: #fd004b;
+cursor: pointer;
 `;
