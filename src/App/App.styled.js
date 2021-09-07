@@ -17,4 +17,6 @@ export const Container = styled.div`
     padding: 0 20px;
   }
 `;
-export const BgLayuot = styled.div``;
+export const BgLayuot = styled.div`
+height: 100%;
+`;

@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
 
+export const FormContainer = styled.div`
+padding-top: 40px;
+`;
+
 export const Form = styled.form`
   display: flex;
   align-items: center;
@@ -9,8 +13,8 @@ export const Form = styled.form`
   background-color: #fff;
   border-radius: 3px;
   overflow: hidden;
-  margin-bottom: 30px;
   box-shadow: 0px 0px 10px 4px #fd004b;
+
 `;
 export const SubmitBtn = styled.button`
   display: inline-block;
@@ -25,7 +29,7 @@ export const SubmitBtn = styled.button`
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   outline: none;
-  :hover {
+  &:hover {
   opacity: 1;
 }
 `;

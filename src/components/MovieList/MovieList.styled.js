@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 export const List = styled.ul`
     display: grid;
+    padding-top: 40px;
   
   @media screen and (min-width: 320px) {
     grid-template-columns: 280px;

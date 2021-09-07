@@ -39,4 +39,5 @@ color: #fd004b;
 
 export const MovieYearByActor = styled.p`
 font-weight: 600;
+color: #000;
 `;

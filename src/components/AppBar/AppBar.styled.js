@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const Header = styled.header`
   display: flex;
   align-items:center;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
   min-height: 150px;
   padding-right: 24px;
   padding-left: 24px;

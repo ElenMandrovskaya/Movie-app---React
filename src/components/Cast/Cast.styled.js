@@ -5,7 +5,7 @@ export const List = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 20px;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 `;
 
 export const Actor = styled.li`

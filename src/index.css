@@ -73,7 +73,8 @@ img {
     color: #fd004b;
     font-size: 18px;
     width: 500px;
-    margin: 20px auto;
+    margin: 0 auto;
+    padding: 20px;
 }
 .pagination li {
     display: flex;
@@ -92,9 +93,11 @@ img {
     padding: 3px;
 }
 .dark-theme {
-    background-color: rgb(50, 50, 50);
-    height: 100vh;
+    background-color: #323232;
 }
+/* .dark-theme li {
+    background-color: #353535;
+} */
 .theme-switch__toggle:checked + .theme-switch__track {
     background-color: #d3d3d4;
 }
