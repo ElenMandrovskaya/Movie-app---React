@@ -1,16 +1,34 @@
-import { ActorBirthday, ActorBio, ActorContainer, ActorName, ActorPhoto, ActorPlace, ActorsInfoContainer, MoviesWithActor } from "./Actors.styled";
-import defaultImg from "../../images/default.png";
+import { useState, useEffect } from "react";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import moment from "moment";
+
+import { ActorBirthday, ActorBio, ActorContainer, ActorName, ActorPhoto, ActorPlace, ActorsInfoContainer, MoviesWithActor, KnownMovTitle } from "./Actors.styled";
+import defaultImg from "../../images/default.png";
 import { KnownAsList } from "../MoviesByActor/MovieListByActor";
+import { getMoviesByActor } from "../../services/apiService";
 
 
-export function Actor({ name, place, birthday, bio, photo }) {
+
+export function Actor({ name, place, birthday, bio, photo, id }) {
 
     const currentAge = moment().diff(birthday, 'years');
     // const currentAge = moment(birthday).toNow()
-    // console.log(currentAge)  
     const birth = moment(birthday).format("MMMM Do YYYY");
-    // console.log(birth)
+    const [actorInfo, setActorInfo] = useState([]);
+    useEffect(() => {
+        async function getMovies () {
+            try {
+                const actorInfo = await getMoviesByActor(name);
+                setActorInfo(actorInfo);
+            } catch (error) {
+                toast.warning("Actor not found")
+            }
+        }
+        getMovies();
+    }, [name]);
+    const filterById = actorInfo.filter(act => act.id === id);
+    const [actorFilms] = filterById.map(arr => arr.known_for);
 
     return (
         <ActorContainer>
@@ -20,9 +38,8 @@ export function Actor({ name, place, birthday, bio, photo }) {
                 {birthday && <ActorBirthday>Date of birth: {birth} ({currentAge} years)</ActorBirthday>}
                 {place && <ActorPlace>Place of birth: {place}</ActorPlace>}
                 <ActorBio>{bio}</ActorBio>
-                <MoviesWithActor> 
-                    <KnownAsList actorName={name}/>
-                </MoviesWithActor>
+                <KnownMovTitle>Known for movies: </KnownMovTitle>
+                <KnownAsList actorFilms={actorFilms}/>
             </ActorsInfoContainer>
         </ActorContainer>
     )

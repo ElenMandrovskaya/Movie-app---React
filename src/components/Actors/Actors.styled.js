@@ -2,9 +2,7 @@ import styled from "@emotion/styled";
 
 export const ActorContainer = styled.div`
 display: flex;
-/* justify-content: space-between; */
 align-items: flex-start;
-/* width: 800px; */
 margin: 0 auto;
 padding: 20px;
 background-color: white;
@@ -60,11 +58,11 @@ export const ActorBirthday = styled.p`
   margin-bottom: 12px;
   color: #fd004b;
 `;
-export const MoviesWithActor = styled.div`
-  font-weight: 600;
-  font-size: 18px;
+export const KnownMovTitle = styled.p`
+font-weight: 600;
+  font-size: 16px;
   line-height: 1.33;
   text-transform: uppercase;
+  margin-bottom: 12px;
   color: #fd004b;
-  margin-bottom: 10px;
 `;

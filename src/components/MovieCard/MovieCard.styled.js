@@ -28,22 +28,20 @@ export const MovieTitle = styled.h2`
 max-width: 260px;
 height: 35px;
 margin: 0 auto;
-  font-weight: 600;
-  font-size: 14px;
-  text-transform: uppercase;
-  color: #fd004b;
-  margin-bottom: 5px;
-  text-align: center;
+font-weight: 600;
+font-size: 14px;
+text-transform: uppercase;
+color: #fd004b;
+margin-bottom: 5px;
+text-align: center;
 `;
 
 export const MovieInfo = styled.div`
-/* max-width: 270px; */
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 5px;
-  padding-right: 5px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-left: 5px;
+padding-right: 5px;
 `;
 
 export const MovieGenre = styled.p`

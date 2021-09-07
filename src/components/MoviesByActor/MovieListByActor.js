@@ -1,31 +1,17 @@
-import { useState, useEffect } from "react";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { MoviesListByActor } from "./MoviesByActor.styled";
 import { KnownAsCard } from "./MoviesCardByActor";
-import { getMoviesByActor } from "../../services/apiService";
 
-export function KnownAsList({actorName}) {
-    const [moviesByActor, setMoviesByActor] = useState([]);
-
-    useEffect(() => {
-        async function getMovies () {
-            try {
-                const moviesByActor = await getMoviesByActor(actorName);
-                if (!moviesByActor) {
-                    throw new Error("Page not found");
-                }
-                setMoviesByActor(moviesByActor);
-            } catch (error) {
-                toast.warning("Page not found")
-            }
-        }
-        getMovies();
-     }, [actorName]);
-     console.log(moviesByActor)
+export function KnownAsList({ actorFilms }) {
     return (
         <MoviesListByActor>
-            <KnownAsCard movies={moviesByActor}/>
+            {actorFilms && actorFilms.map(({ id, title, poster_path, release_date }) => (
+                <KnownAsCard
+                    key={id}
+                    id={id}
+                    posterPath={poster_path}
+                    title={title}
+                    release={release_date}
+            />))}
         </MoviesListByActor>
     )
 }

@@ -45,6 +45,7 @@ export default function ActorPage() {
                 place={actor.place_of_birth}
                 bio={actor.biography}
                 birthday={actor.birthday}
+                id={actor.id}
             />}
         </>    
     )
