@@ -6,6 +6,7 @@ export const List = styled.ul`
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 20px;
   padding-bottom: 50px;
+  background-color: inherit;
 `;
 
 export const Actor = styled.li`

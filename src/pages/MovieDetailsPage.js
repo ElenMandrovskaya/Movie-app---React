@@ -20,7 +20,7 @@ export default function MovieDetailsPage() {
     const { path } = useRouteMatch();
     const location = useLocation();
     const locationState = useRef(location.state?.from).current;
-// console.log(movieId)
+
     useEffect(() => {
         async function getMovie() {
             try {

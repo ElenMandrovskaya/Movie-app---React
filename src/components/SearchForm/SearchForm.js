@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Form, SubmitBtn, BtnLabel, Input, FormContainer } from "./SearchForm.styled";
+import { Form, SubmitBtn, BtnLabel, Input } from "./SearchForm.styled";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -15,7 +15,7 @@ export function SearchForm({ onSearch }) {
   };
 
   return (
-      <FormContainer>
+      <>
           <Form onSubmit={handleSearch}>
                 <SubmitBtn type="submit">
                     <BtnLabel>Search</BtnLabel>
@@ -27,7 +27,7 @@ export function SearchForm({ onSearch }) {
                     autoFocus
                     placeholder="Search movies"/>
       </Form>
-      </FormContainer>
+      </>
     );
 }
 

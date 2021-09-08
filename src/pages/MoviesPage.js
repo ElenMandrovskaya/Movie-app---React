@@ -7,6 +7,7 @@ import { MovieList } from "../components/MovieList/MovieList";
 import { getSearchMovies } from "../services/apiService";
 import { Spinner } from "../components/Spinner/Spinner";
 import { Pagination } from "../components/Pagination/Pagination";
+import { BgHeight } from "../App/App.styled";
 
 export default function MoviesPage() {
     // const [searchQuery, setSearchQuery] = useState("");
@@ -64,7 +65,9 @@ export default function MoviesPage() {
 
         if (status === "idle") {
             return (
-                <SearchForm onSearch={handleQueryChange} />
+                <BgHeight>
+                    <SearchForm onSearch={handleQueryChange} />
+                </BgHeight>
             )
         }
         if (status === "pending") {

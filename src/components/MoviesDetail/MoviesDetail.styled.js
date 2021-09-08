@@ -5,9 +5,9 @@ export const MovieContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   width: 800px;
-  margin: 0 auto;
+  margin: 40px auto;
   padding: 20px;
-  background-color: white;
+  background-color: inherit;
   box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
   transition: all 250ms ease-in-out;
     &:hover,
@@ -35,7 +35,7 @@ font-style: normal;
   margin-bottom: 15px;
 `;
 
-export const ItemTitle = styled.p`
+export const ItemTitle = styled.h2`
   font-weight: 700;
   font-size: 18px;
   line-height: 1.33;
@@ -68,5 +68,6 @@ export const BackBtn = styled.button`
   color: #fd004b;
   box-shadow: 0px 0px 10px 4px #fd004b;
   z-index: 999;
+  background-color: inherit;
  
 `;

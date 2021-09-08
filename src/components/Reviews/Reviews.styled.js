@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 export const List = styled.ul`
 margin-top: 30px;
 margin-bottom: 30px;
+background-color: inherit;
 `;
 
 export const Item = styled.li`
@@ -12,7 +13,7 @@ export const Item = styled.li`
   width: 1000px;
   margin: 0 auto;
   padding: 20px;
-  background-color: white;
+  background-color: inherit;
   box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
   transition: all 250ms ease-in-out;
     &:hover,

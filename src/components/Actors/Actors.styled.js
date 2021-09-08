@@ -5,7 +5,8 @@ display: flex;
 align-items: flex-start;
 margin: 0 auto;
 padding: 20px;
-background-color: white;
+background-color: inherit;
+/* width: 1000px; */
 box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
  transition: all 250ms ease-in-out;
     &:hover,
@@ -24,7 +25,7 @@ object-fit: cover;
 `;
 export const ActorsInfoContainer = styled.div`
 `;
-export const ActorName = styled.p`
+export const ActorName = styled.h2`
 font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -57,7 +58,7 @@ text-transform: uppercase;
 margin-bottom: 12px;
 color: #fd004b;
 `;
-export const KnownMovTitle = styled.p`
+export const KnownMovTitle = styled.h2`
 font-weight: 600;
 font-size: 16px;
 line-height: 1.33;

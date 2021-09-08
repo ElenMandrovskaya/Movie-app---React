@@ -14,9 +14,12 @@ export const Container = styled.div`
   }
   @media screen and (min-width: 1240px) {
     width: 1240px;
-    padding: 0 20px;
+    padding: 40px 20px;
   }
 `;
 export const BgLayuot = styled.div`
-height: 100%;
+`;
+
+export const BgHeight = styled.div`
+height: 100vh;
 `;

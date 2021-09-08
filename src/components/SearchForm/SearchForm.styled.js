@@ -1,9 +1,5 @@
 import styled from "@emotion/styled";
 
-export const FormContainer = styled.div`
-padding-top: 40px;
-`;
-
 export const Form = styled.form`
   display: flex;
   align-items: center;
