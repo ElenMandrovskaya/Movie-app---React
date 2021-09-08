@@ -4,12 +4,13 @@ export const MovieContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 800px;
-  margin: 40px auto;
+  width: 85%;
+  margin: 0 auto;
   padding: 20px;
   background-color: inherit;
   box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
   transition: all 250ms ease-in-out;
+  margin-bottom: 100%;
     &:hover,
     &:focus {
       transform: scale(1.05);
@@ -17,10 +18,10 @@ export const MovieContainer = styled.div`
     }
 `;
 export const DetailsContainer = styled.div`
-  width:460px;
+  width: 560px;
 `;
 export const Poster = styled.img`
-  height: 398px;
+  height: 500px;
   cursor: pointer;
   border-radius: 5px;
 `;
