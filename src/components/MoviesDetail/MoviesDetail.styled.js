@@ -10,7 +10,7 @@ export const MovieContainer = styled.div`
   background-color: inherit;
   box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
   transition: all 250ms ease-in-out;
-  margin-bottom: 100%;
+  margin-bottom: 200px;
     &:hover,
     &:focus {
       transform: scale(1.05);
